@@ -25,13 +25,13 @@ public class RestfulAuthorization {
 	public String getAccessToken(String url, String username, String password) throws Exception {
 		HttpResponse<JsonNode> response = 
 				Unirest.post(url)
-				.basicAuth("clientapp", "123456")
+				.basicAuth("remoteclientapp", "schedule@restful")
 				.header("accept", "application/json")
 				.header("content-type", "application/x-www-form-urlencoded")
 				.body("username="+username+"&password="+password+"&grant_type=password&scope=read%20write")
 				.asJson();
 		System.out.println(response.getBody());
 		return response.getBody().getObject().get("token_type").toString() 
-				+" "+ response.getBody().getObject().get("access_token").toString();
+				+ response.getBody().getObject().get("access_token").toString();
 	}
 }

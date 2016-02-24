@@ -4,7 +4,7 @@ import java.net.URL;
 
 import org.junit.Test;
 
-public class RestFul {
+public class RestFulTest {
 
 	@Test
 	public void greetingWithAuthorized() throws Exception{
